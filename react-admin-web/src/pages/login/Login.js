@@ -19,7 +19,6 @@ import {Redirect} from 'react-router-dom'
                   //保存user
                   const user=res.data;
                   memoryUtils.user=user;
-                  
                   storageUtils.saveUser(user);//保存到local中去
 
                  //跳转到管理界面(用replace不需要再回退回来)
