@@ -1,0 +1,1 @@
+下载monggodb，然后npm install安装依赖 ，然后npm start
