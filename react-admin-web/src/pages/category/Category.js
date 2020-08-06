@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button,Modal } from 'antd';
+import { Card, Table, Button,Modal,message } from 'antd';
 import { PlusOutlined,ArrowRightOutlined } from '@ant-design/icons'
 import LinkButton from '../../components/link-button/LinkButton'
 import {reqCategorys, reqUpdateCategory, reqAddCategory} from '../../api/index'
