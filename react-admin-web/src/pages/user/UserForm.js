@@ -5,7 +5,7 @@ import {
     Select,
     Input,
   } from 'antd'
-   Option=Select.Option;
+  const Option=Select.Option;
 
 export default class UserForm extends PureComponent {
     static propTypes = {
