@@ -17,46 +17,51 @@
 
 ## **首页界面**
 
-![QQ截图20200809221245](C:\Users\Lenovo\Desktop\QQ截图20200809221245.png)
+![图片2.png](https://i.loli.net/2020/09/08/ifUzxDkENGw1IBr.png)
+
+
+
 
 
 
 ## **品类管理界面**
 
-![QQ截图20200809221307](C:\Users\Lenovo\Desktop\QQ截图20200809221307.png)
+![图片3.png](https://i.loli.net/2020/09/08/96ILz3mh2J5n1ax.png)
 
 
 
 ## **商品管理界面**
 
-![QQ截图20200809221652](C:\Users\Lenovo\Desktop\QQ截图20200809221652.png)![QQ截图20200809221401](C:\Users\Lenovo\Desktop\QQ截图20200809221401.png)
+![图片4.png](https://i.loli.net/2020/09/08/mPw9oA71RpWHLcj.png)
+
+![图片5.png](https://i.loli.net/2020/09/08/oVlj67YtLiZE9T1.png)
 
 
 
 ## **用户管理界面**
 
-![QQ截图20200809222217](C:\Users\Lenovo\Desktop\QQ截图20200809222217.png)
+![图片6.png](https://i.loli.net/2020/09/08/A3zDeTvEjfKYpMi.png)
 
 
 
 ## **角色管理界面**
 
-![QQ截图20200809222300](C:\Users\Lenovo\Desktop\QQ截图20200809222300.png)![QQ截图20200809222248](C:\Users\Lenovo\Desktop\QQ截图20200809222248.png)
+![图片7.png](https://i.loli.net/2020/09/08/A3tVTX7BuSi4OzH.png)
 
 
 
 ## **柱状图界面**
 
-![QQ截图20200809222319](C:\Users\Lenovo\Desktop\QQ截图20200809222319.png)
+![图片8.png](https://i.loli.net/2020/09/08/gds7ZebqafIEJP1.png)
 
 
 
 ## 折线图界面
 
-![QQ截图20200809222330](C:\Users\Lenovo\Desktop\QQ截图20200809222330.png)
+![图片9.png](https://i.loli.net/2020/09/08/o1t2gidND4eCwFW.png)
 
 
 
 ## 饼图界面
 
-![QQ截图20200809222342](C:\Users\Lenovo\Desktop\QQ截图20200809222342.png)
+![图片10.png](https://i.loli.net/2020/09/08/t31byr6EvQSohGL.png)
