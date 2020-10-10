@@ -5,11 +5,7 @@ import {
     Select,
     Input,
   } from 'antd'
-  
-
-
 const { Option } = Select;
-
 export default class AddForm extends Component {
     static propTypes = {
         // setForm: PropTypes.func.isRequired, // 用来传递form对象的函数
@@ -20,9 +16,7 @@ export default class AddForm extends Component {
        
         this.setState({
             msg:e.target.value,
-        })
-      
-       
+        })  
     }
     render() {
         const {categorys,parentId} =this.props;

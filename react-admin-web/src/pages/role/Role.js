@@ -26,7 +26,6 @@ export default class Role extends Component {
     }
     constructor (props) {
         super(props)
-    
         this.auth = React.createRef()
       }
     getRoles = async () => {

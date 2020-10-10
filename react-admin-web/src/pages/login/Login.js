@@ -13,6 +13,7 @@ import {Redirect} from 'react-router-dom'
  class Login extends Component {
     onFinish= async (values)=>{
             const {username,password}=values;
+            debugger
             const res=await reqLogin(username,password);
             if(res.status===0){
                message.success('登录成功!')

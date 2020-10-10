@@ -5,8 +5,6 @@ import LinkButton from '../../components/link-button/LinkButton'
 import {reqCategorys, reqUpdateCategory, reqAddCategory} from '../../api/index'
 import AddForm from './AddForm'
 import UpdateForm from './UpdateForm'
-import axios from 'axios'
-import jsonp from 'jsonp';
 export default class Category extends Component {
   state = {
     loading: false,

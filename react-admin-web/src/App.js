@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Admin from './pages/admin/Admin'
 import Login from './pages/login/Login'
-
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     return (
       <BrowserRouter>
