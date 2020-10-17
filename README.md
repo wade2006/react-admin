@@ -1,10 +1,8 @@
+
+
+运行教程
 1.下载monggodb数据库
 2.分别在两个目录里（react-admin-web和react-admin-web-api）npm install安装依赖 ， 再npm start启动项目
-
-
-
-
-
 ## **登录界面**
 
 ![图片1.png](https://i.loli.net/2020/09/08/lkcxWoBj1RtpEXh.png)
