@@ -1,5 +1,4 @@
-
-
+react-admin-web的三个版本分别代表antd3和antd4以及使用状态管理react-redux的版本
 运行教程
 1.下载monggodb数据库
 2.分别在两个目录里（react-admin-web和react-admin-web-api）npm install安装依赖 ， 再npm start启动项目
