@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import {
   Form,
   Icon,
@@ -9,7 +9,7 @@ import {
 } from 'antd'
 import './login.less'
 import logo from './images/logo.png'
-import {reqLogin} from '../../api'
+import { reqLogin } from '../../api'
 import memoryUtils from '../../utils/memoryUtils'
 import storageUtils from '../../utils/storageUtils'
 const Item = Form.Item // 不能写在import之前
@@ -29,10 +29,10 @@ class Login extends Component {
       if (!err) {
         // console.log('提交登陆的ajax请求', values)
         // 请求登陆
-        const {username, password} = values
+        const { username, password } = values
         const result = await reqLogin(username, password) // {status: 0, data: user}  {status: 1, msg: 'xxx'}
         // console.log('请求成功', result)
-        if (result.status===0) { // 登陆成功
+        if (result.status === 0) { // 登陆成功
           // 提示登陆成功
           message.success('登陆成功')
 
@@ -73,11 +73,11 @@ class Login extends Component {
     */
   validatePwd = (rule, value, callback) => {
     console.log('validatePwd()', rule, value)
-    if(!value) {
+    if (!value) {
       callback('密码必须输入')
-    } else if (value.length<4) {
+    } else if (value.length < 4) {
       callback('密码长度不能小于4位')
-    } else if (value.length>12) {
+    } else if (value.length > 12) {
       callback('密码长度不能大于12位')
     } else if (!/^[a-zA-Z0-9_]+$/.test(value)) {
       callback('密码必须是英文、数字或下划线组成')
@@ -87,12 +87,12 @@ class Login extends Component {
     // callback('xxxx') // 验证失败, 并指定提示的文本
   }
 
-  render () {
+  render() {
 
     // 如果用户已经登陆, 自动跳转到管理界面
     const user = memoryUtils.user
-    if(user && user._id) {
-      return <Redirect to='/'/>
+    if (user && user._id) {
+      return <Redirect to='/' />
     }
 
     // 得到具强大功能的form对象
@@ -102,7 +102,7 @@ class Login extends Component {
     return (
       <div className="login">
         <header className="login-header">
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
           <h1>React项目: 后台管理系统</h1>
         </header>
         <section className="login-content">
@@ -130,7 +130,7 @@ class Login extends Component {
                   // initialValue: 'admin', // 初始值
                 })(
                   <Input
-                    prefix={<Icon type="user" className="site-form-item-icon" />}
+                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }}/>}
                     placeholder="用户名"
                   />
                 )
@@ -146,7 +146,7 @@ class Login extends Component {
                   ]
                 })(
                   <Input
-                    prefix={<Icon type="lock" className="site-form-item-icon"  />}
+                    prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }}/>}
                     type="password"
                     placeholder="密码"
                   />

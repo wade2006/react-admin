@@ -8,7 +8,6 @@ import {
   Button,
   message
 } from 'antd'
-
 import PicturesWall from './pictures-wall'
 import RichTextEditor from './rich-text-editor'
 import LinkButton from '../../components/link-button'

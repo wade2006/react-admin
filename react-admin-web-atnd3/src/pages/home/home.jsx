@@ -73,7 +73,7 @@ export default class Home extends Component {
           <Card
             className="home-table-left"
             title={isVisited ? '访问趋势' : '销售趋势'}
-            bodyStyle={{padding: 0, height: 275}}
+            bodyStyle={{padding: 0, height: 200,marginBottom:100}}
             extra={<Icon type="reload"/>}
           >
             <Bar/>
