@@ -1,68 +1,93 @@
 import React, {Component} from 'react'
 import {Card, Button} from 'antd'
-import ReactEcharts from 'echarts-for-react'
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Tooltip,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util
+} from "bizcharts";
 
 /*
 后台管理的柱状图路由组件
  */
 export default class Bar extends Component {
 
-  state = {
-    sales: [5, 20, 36, 10, 10, 20], // 销量的数组
-    stores: [6, 10, 25, 20, 15, 10], // 库存的数组
-  }
-
-  update = () => {
-    this.setState(state => ({
-      sales: state.sales.map(sale => sale + 1),
-      stores: state.stores.reduce((pre, store) => {
-        pre.push(store-1)
-        return pre
-      }, []),
-    }))
-  }
-
-  /*
-  返回柱状图的配置对象
-   */
-  getOption = (sales, stores) => {
-    return {
-      title: {
-        text: 'ECharts 入门示例'
-      },
-      tooltip: {},
-      legend: {
-        data:['销量', '库存']
-      },
-      xAxis: {
-        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-      },
-      yAxis: {},
-      series: [{
-        name: '销量',
-        type: 'bar',
-        data: sales
-      }, {
-        name: '库存',
-        type: 'bar',
-        data: stores
-      }]
-    }
-  }
+ 
 
   render() {
-    const {sales, stores} = this.state
+    const data = [
+      {
+        name: "John",
+        vote: 35654
+      },
+      {
+        name: "Damon",
+        vote: 65456
+      },
+      {
+        name: "Patrick",
+        vote: 45724
+      },
+      {
+        name: "Mark",
+        vote: 13654
+      }
+    ];
+    const imageMap = {
+      John: "https://zos.alipayobjects.com/rmsportal/mYhpaYHyHhjYcQf.png",
+      Damon: "https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png",
+      Patrick: "https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png",
+      Mark: "https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png"
+    };
+    const scale = {
+      vote: {
+        min: 0
+      }
+    };
     return (
       <div>
-        <Card>
-          <Button type='primary' onClick={this.update}>更新</Button>
-        </Card>
-
-        <Card title='柱状图一'>
-          <ReactEcharts option={this.getOption(sales, stores)} />
-        </Card>
-
-      </div>
+      <Chart
+      style={{marginTop:100}}
+        data={data}
+        padding={[60, 20, 40, 60]}
+        scale={scale}
+        forceFit
+      >
+        <Axis
+          name="vote"
+          labels={null}
+          title={null}
+          line={null}
+          tickLine={null}
+        />
+        <Geom
+          type="interval"
+          position="name*vote"
+          color={["name", ["#7f8da9", "#fec514", "#db4c3c", "#daf0fd"]]}
+        />
+        <Tooltip />
+        <Geom
+          type="point"
+          position="name*vote"
+          size={60}
+          shape={[
+            "name",
+            function(name) {
+              return ["image", imageMap[name]];
+            }
+          ]}
+        />
+      </Chart>
+    </div>
     )
   }
 }

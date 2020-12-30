@@ -1,67 +1,190 @@
 import React, {Component} from 'react'
 import {Card, Button} from 'antd'
-import ReactEcharts from 'echarts-for-react'
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Tooltip,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util
+} from "bizcharts";
 
 /*
 后台管理的折线图路由组件
  */
 export default class Line extends Component {
 
-  state = {
-    sales: [5, 20, 36, 10, 10, 20], // 销量的数组
-    stores: [6, 10, 25, 20, 15, 10], // 库存的数组
-  }
-
-  update = () => {
-    this.setState(state => ({
-      sales: state.sales.map(sale => sale + 1),
-      stores: state.stores.reduce((pre, store) => {
-        pre.push(store-1)
-        return pre
-      }, []),
-    }))
-  }
-
-  /*
-  返回柱状图的配置对象
-   */
-  getOption = (sales, stores) => {
-    return {
-      title: {
-        text: 'ECharts 入门示例'
-      },
-      tooltip: {},
-      legend: {
-        data:['销量', '库存']
-      },
-      xAxis: {
-        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-      },
-      yAxis: {},
-      series: [{
-        name: '销量',
-        type: 'line',
-        data: sales
-      }, {
-        name: '库存',
-        type: 'line',
-        data: stores
-      }]
-    }
-  }
 
   render() {
-    const {sales, stores} = this.state
+    const data = [
+      {
+          month: "Jan",
+          city: "Tokyo",
+          temperature: 7
+      },
+      {
+          month: "Jan",
+          city: "London",
+          temperature: 3.9
+      },
+      {
+          month: "Feb",
+          city: "Tokyo",
+          temperature: 6.9
+      },
+      {
+          month: "Feb",
+          city: "London",
+          temperature: 4.2
+      },
+      {
+          month: "Mar",
+          city: "Tokyo",
+          temperature: 9.5
+      },
+      {
+          month: "Mar",
+          city: "London",
+          temperature: 5.7
+      },
+      {
+          month: "Apr",
+          city: "Tokyo",
+          temperature: 14.5
+      },
+      {
+          month: "Apr",
+          city: "London",
+          temperature: 8.5
+      },
+      {
+          month: "May",
+          city: "Tokyo",
+          temperature: 18.4
+      },
+      {
+          month: "May",
+          city: "London",
+          temperature: 11.9
+      },
+      {
+          month: "Jun",
+          city: "Tokyo",
+          temperature: 21.5
+      },
+      {
+          month: "Jun",
+          city: "London",
+          temperature: 15.2
+      },
+      {
+          month: "Jul",
+          city: "Tokyo",
+          temperature: 25.2
+      },
+      {
+          month: "Jul",
+          city: "London",
+          temperature: 17
+      },
+      {
+          month: "Aug",
+          city: "Tokyo",
+          temperature: 26.5
+      },
+      {
+          month: "Aug",
+          city: "London",
+          temperature: 16.6
+      },
+      {
+          month: "Sep",
+          city: "Tokyo",
+          temperature: 23.3
+      },
+      {
+          month: "Sep",
+          city: "London",
+          temperature: 14.2
+      },
+      {
+          month: "Oct",
+          city: "Tokyo",
+          temperature: 18.3
+      },
+      {
+          month: "Oct",
+          city: "London",
+          temperature: 10.3
+      },
+      {
+          month: "Nov",
+          city: "Tokyo",
+          temperature: 13.9
+      },
+      {
+          month: "Nov",
+          city: "London",
+          temperature: 6.6
+      },
+      {
+          month: "Dec",
+          city: "Tokyo",
+          temperature: 9.6
+      },
+      {
+          month: "Dec",
+          city: "London",
+          temperature: 4.8
+      }
+    ];
+    const cols = {
+      month: {
+        range: [0, 1]
+      }
+    };
     return (
       <div>
-        <Card>
-          <Button type='primary' onClick={this.update}>更新</Button>
-        </Card>
-
-        <Card title='折线图一'>
-          <ReactEcharts option={this.getOption(sales, stores)} />
-        </Card>
-
+        <Chart style={{marginTop:100}} height={500} data={data} scale={cols} forceFit>
+          <Legend />
+          <Axis name="month" />
+          <Axis
+            name="temperature"
+            label={{
+              formatter: val => `${val}°C`
+            }}
+          />
+          <Tooltip
+            crosshairs={{
+              type: "y"
+            }}
+          />
+          <Geom
+            type="line"
+            position="month*temperature"
+            size={2}
+            color={"city"}
+            shape={"smooth"}
+          />
+          <Geom
+            type="point"
+            position="month*temperature"
+            size={4}
+            shape={"circle"}
+            color={"city"}
+            style={{
+              stroke: "#fff",
+              lineWidth: 1
+            }}
+          />
+        </Chart>
       </div>
     )
   }
